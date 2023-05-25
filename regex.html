@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    body{
+      background-image: url(https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg);
+      background-size: cover;
+      min-height: 90hv;
+      padding: 5%;
+      background-position: center;
+      position: relative;
+    }
+    form {
+      width: 300px;
+      padding: 100px;
+      background: #f0f0f0;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+    form{
+      background-image: url(https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg);
+      background-size: cover;
+      min-height: 90hv;
+      padding: 5%;
+      background-position: center;
+      position: relative;
+      text-align: center;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="confirm password"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    select{
+      width: 300px;
+      padding: 7px;
+      margin-bottom: 10%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button[type="submit"] {
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      padding: 5px;
+      width: 50%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button[type="submit"]:hover {
+      background: #45a049;
+    }
+    </style>
+    <script>
+        function check() {
+          var firstName = document.getElementById("firstname").value;
+          var email=document.getElementById("email").value
+          var password=document.getElementById("password").value
+          var confirmpassword=document.getElementById("confirmpassword").value
+          var firstNameCheck = /^[a-zA-Z]+$/;
+          var emailCheck = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]{2,3}$/
+                            //siva.ram@codegnan.com
+          var passwordCheck = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.[@#$*]).{8,14}$/
+          console.log(firstName)
+          var male=document.getElementById("gendermale").checked
+          var female=document.getElementById("genderfemale").checked
+          var dropdown = document.getElementById("states-dropdown").checked
+          if (firstName == "" || firstName.length < 3) {
+            alert("Please enter your name")
+            return false
+          }
+          if (!firstName.match(firstNameCheck)) {
+            alert("Name must contain only characters")
+            return false
+          }
+          if(!email.match(emailCheck)){
+            alert("provide proper email id")
+            return false
+          }
+          if(!password.match(passwordCheck)){
+            alert("enter strong password")
+            return false
+          }
+          if(!confirmpassword.match(confirmpasswordCheck)){
+            alert("enter strong password")
+            return false
+          }
+          if(!gender.match(genderCheck)){
+            alert("select your gender")
+            return false
+          }
+          if(!state.match(stateCheck)){
+            alert("select your state")
+            return false
+          }
+          console.log(email)
+          console.log(passwordrd)
+          console.log(confirmpassword)
+          console.log(gender)
+          return true;
+        }
+        </script>
+        </head> 
+        <body>
+        <form onsubmit="return check();">
+          <h1>Login Form</h1>
+          <input type="text" name="firstname" placeholder="firstname" required>
+          <input type="text" name="email" placeholder="email" required>
+          <input type="password" name="password" placeholder="password"required>
+          <input type="confirm password" name="confirm password" placeholder="confirm password" required>
+          <p>
+            <input type="radio" name="gender" id="gendermale"/>male
+            <input type="radio" name="gender" id="genderfemale"/>female
+          </p>
+          <select>
+            <option value="">---Select State---</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tamil nadu">Tamil nadu</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Odisha">Odisha</option>
+            </select>
+          <button type="submit">Submit</button>
+        </form>
+</body>
+</html>
+
+
+
+<!-- 
+    Name
+    Email
+    password
+    confirm password
+    gender(radio)
+    state(dropdown)
+ -->
